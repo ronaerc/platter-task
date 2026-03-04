@@ -174,7 +174,7 @@
             "show_best_seller_badge": true,
             "show_sale_badge": false,
             "sale_badge_text": "SAVE 10%",
-            "rating": 4.5,
+            "rating": 3,
             "review_count": "1,234"
           }
         },
@@ -186,7 +186,7 @@
             "show_best_seller_badge": true,
             "show_sale_badge": false,
             "sale_badge_text": "SAVE 10%",
-            "rating": 4.5,
+            "rating": 1,
             "review_count": "1,234"
           }
         },

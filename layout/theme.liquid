@@ -35,6 +35,12 @@
     {{ content_for_header }}
 
     <script src="https://cdn.tailwindcss.com" ></script>
+    <script>
+      tailwind.config = {
+        prefix: 'tw-'  
+      }
+    </script>
+
 
     {%- liquid
       assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'

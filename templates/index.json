@@ -170,6 +170,7 @@
           "type": "product",
           "settings": {
             "product": "the-3p-fulfilled-snowboard",
+            "hover_image": "shopify://shop_images/joshua-reddekopp-9BpTTLoTv9w-unsplash.jpg",
             "background_color": "#f5f5f5",
             "show_best_seller_badge": true,
             "show_sale_badge": true,
@@ -182,6 +183,7 @@
           "type": "product",
           "settings": {
             "product": "the-collection-snowboard-hydrogen",
+            "hover_image": "shopify://shop_images/yann-allegre-8FG9tt8qZ-8-unsplash.jpg",
             "background_color": "#f5f5f5",
             "show_best_seller_badge": true,
             "show_sale_badge": false,
@@ -194,6 +196,7 @@
           "type": "product",
           "settings": {
             "product": "the-collection-snowboard-liquid",
+            "hover_image": "shopify://shop_images/ilya-shishikhin-bpz-MQJDJuA-unsplash.jpg",
             "background_color": "#f5f5f5",
             "show_best_seller_badge": true,
             "show_sale_badge": false,
@@ -206,6 +209,7 @@
           "type": "product",
           "settings": {
             "product": "the-collection-snowboard-oxygen",
+            "hover_image": "shopify://shop_images/hamish-duncan-XO6FSH3H5CE-unsplash.jpg",
             "background_color": "#f5f5f5",
             "show_best_seller_badge": true,
             "show_sale_badge": false,
@@ -218,6 +222,7 @@
           "type": "product",
           "settings": {
             "product": "the-compare-at-price-snowboard",
+            "hover_image": "shopify://shop_images/yann-allegre-8FG9tt8qZ-8-unsplash.jpg",
             "background_color": "#f5f5f5",
             "show_best_seller_badge": true,
             "show_sale_badge": false,
@@ -230,6 +235,7 @@
           "type": "product",
           "settings": {
             "product": "the-complete-snowboard",
+            "hover_image": "shopify://shop_images/karsten-winegeart-pCS5YlrskC8-unsplash.jpg",
             "background_color": "#f5f5f5",
             "show_best_seller_badge": true,
             "show_sale_badge": false,
@@ -242,6 +248,7 @@
           "type": "product",
           "settings": {
             "product": "the-hidden-snowboard",
+            "hover_image": "shopify://shop_images/mads-schmidt-rasmussen-tSp5_w9h5TQ-unsplash.jpg",
             "background_color": "#f5f5f5",
             "show_best_seller_badge": true,
             "show_sale_badge": false,
@@ -254,6 +261,7 @@
           "type": "product",
           "settings": {
             "product": "the-inventory-not-tracked-snowboard",
+            "hover_image": "shopify://shop_images/johannes-waibel-WdBQHcIiSIw-unsplash.jpg",
             "background_color": "#f5f5f5",
             "show_best_seller_badge": true,
             "show_sale_badge": false,
@@ -266,6 +274,7 @@
           "type": "product",
           "settings": {
             "product": "the-multi-location-snowboard",
+            "hover_image": "shopify://shop_images/visit-almaty-wN4D-mVR7fE-unsplash.jpg",
             "background_color": "#f5f5f5",
             "show_best_seller_badge": true,
             "show_sale_badge": false,
@@ -278,6 +287,7 @@
           "type": "product",
           "settings": {
             "product": "the-multi-managed-snowboard",
+            "hover_image": "shopify://shop_images/mattias-olsson-nQz49efZEFs-unsplash.jpg",
             "background_color": "#f5f5f5",
             "show_best_seller_badge": true,
             "show_sale_badge": false,

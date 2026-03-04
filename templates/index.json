@@ -172,7 +172,7 @@
             "product": "the-3p-fulfilled-snowboard",
             "background_color": "#f5f5f5",
             "show_best_seller_badge": true,
-            "show_sale_badge": false,
+            "show_sale_badge": true,
             "sale_badge_text": "SAVE 10%",
             "rating": 3,
             "review_count": "1,234"

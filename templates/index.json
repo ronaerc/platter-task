@@ -162,12 +162,159 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "best_sellers_c3PRzE": {
+      "type": "best-sellers",
+      "blocks": {
+        "product_trQidd": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "background_color": "#f5f5f5",
+            "show_best_seller_badge": true,
+            "show_sale_badge": false,
+            "sale_badge_text": "SAVE 10%",
+            "rating": 4.5,
+            "review_count": "1,234"
+          }
+        },
+        "product_TFe7cz": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "background_color": "#f5f5f5",
+            "show_best_seller_badge": true,
+            "show_sale_badge": false,
+            "sale_badge_text": "SAVE 10%",
+            "rating": 4.5,
+            "review_count": "1,234"
+          }
+        },
+        "product_9PkbNb": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "background_color": "#f5f5f5",
+            "show_best_seller_badge": true,
+            "show_sale_badge": false,
+            "sale_badge_text": "SAVE 10%",
+            "rating": 4.5,
+            "review_count": "1,234"
+          }
+        },
+        "product_h4nqBa": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "background_color": "#f5f5f5",
+            "show_best_seller_badge": true,
+            "show_sale_badge": false,
+            "sale_badge_text": "SAVE 10%",
+            "rating": 4.5,
+            "review_count": "1,234"
+          }
+        },
+        "product_PKXrfM": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "background_color": "#f5f5f5",
+            "show_best_seller_badge": true,
+            "show_sale_badge": false,
+            "sale_badge_text": "SAVE 10%",
+            "rating": 4.5,
+            "review_count": "1,234"
+          }
+        },
+        "product_46wcGx": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "background_color": "#f5f5f5",
+            "show_best_seller_badge": true,
+            "show_sale_badge": false,
+            "sale_badge_text": "SAVE 10%",
+            "rating": 4.5,
+            "review_count": "1,234"
+          }
+        },
+        "product_fBkpbc": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "background_color": "#f5f5f5",
+            "show_best_seller_badge": true,
+            "show_sale_badge": false,
+            "sale_badge_text": "SAVE 10%",
+            "rating": 4.5,
+            "review_count": "1,234"
+          }
+        },
+        "product_6rDBwF": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "background_color": "#f5f5f5",
+            "show_best_seller_badge": true,
+            "show_sale_badge": false,
+            "sale_badge_text": "SAVE 10%",
+            "rating": 4.5,
+            "review_count": "1,234"
+          }
+        },
+        "product_MQ3a64": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "background_color": "#f5f5f5",
+            "show_best_seller_badge": true,
+            "show_sale_badge": false,
+            "sale_badge_text": "SAVE 10%",
+            "rating": 4.5,
+            "review_count": "1,234"
+          }
+        },
+        "product_itdCqm": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "background_color": "#f5f5f5",
+            "show_best_seller_badge": true,
+            "show_sale_badge": false,
+            "sale_badge_text": "SAVE 10%",
+            "rating": 4.5,
+            "review_count": "1,234"
+          }
+        }
+      },
+      "block_order": [
+        "product_trQidd",
+        "product_TFe7cz",
+        "product_9PkbNb",
+        "product_h4nqBa",
+        "product_PKXrfM",
+        "product_46wcGx",
+        "product_fBkpbc",
+        "product_6rDBwF",
+        "product_MQ3a64",
+        "product_itdCqm"
+      ],
+      "name": "Best Sellers",
+      "settings": {
+        "heading": "Best Sellers",
+        "show_view_all": true,
+        "view_all_text": "Shop All Best Sellers",
+        "view_all_link": "",
+        "show_more_text": "Show More",
+        "show_less_text": "Show Less"
+      }
     }
   },
   "order": [
     "6a3bb789-ce10-45f5-ae67-e2063ef8c76b",
     "featured_collection",
     "f1552b18-6017-4231-810d-74e61da22c37",
-    "38cdf60f-e431-43b5-aac3-7e6215447d67"
+    "38cdf60f-e431-43b5-aac3-7e6215447d67",
+    "best_sellers_c3PRzE"
   ]
 }

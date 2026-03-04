@@ -1,0 +1,106 @@
+{% comment %}
+  Snippet: Best Seller Card
+  File: snippets/best-seller-card.liquid
+{% endcomment %}
+
+{% assign product = block.settings.product %}
+{% assign primary_image = block.settings.custom_image | default: product.featured_image %}
+{% assign hover_image = block.settings.hover_image | default: product.images[1] %}
+{% assign bg_color = block.settings.background_color | default: '#f5f5f5' %}
+{% assign rating = block.settings.rating | default: 4.5 %}
+{% assign review_count = block.settings.review_count | default: '1,234' %}
+
+<div class="product-card tw-group" {{ block.shopify_attributes }}>
+  <a href="{{ product.url }}" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4" style="background-color: {{ bg_color }};">
+    <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+      {% if block.settings.show_best_seller_badge %}
+        <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black">
+          Best Seller
+        </span>
+      {% endif %}
+      
+      {% if block.settings.show_sale_badge %}
+        <span class="tw-bg-[#4A7C59] tw-text-white tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black">
+          {{ block.settings.sale_badge_text }}
+        </span>
+      {% endif %}
+    </div>
+
+    {% if primary_image %}
+      <img 
+        src="{{ primary_image | image_url: width: 800 }}"
+        alt="{{ product.title | escape }}"
+        class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out group-hover:tw-opacity-0"
+        loading="lazy"
+        width="800"
+        height="800"
+      >
+    {% else %}
+      {{ 'product-1' | placeholder_svg_tag: 'tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover' }}
+    {% endif %}
+
+    {% if hover_image %}
+      <img 
+        src="{{ hover_image | image_url: width: 800 }}"
+        alt="{{ product.title | escape }}"
+        class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out tw-opacity-0 group-hover:tw-opacity-100"
+        loading="lazy"
+        width="800"
+        height="800"
+      >
+    {% endif %}
+  </a>
+
+  <div class="tw-space-y-2">
+    <a href="{{ product.url }}" class="tw-block">
+      <h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug hover:tw-text-gray-600 tw-transition-colors">
+        {{ product.title | default: 'Product Title' }}
+      </h3>
+    </a>
+
+    <div class="tw-flex tw-items-center tw-gap-1">
+      <div class="tw-flex tw-items-center">
+        {% assign full_stars = rating | floor %}
+        {% assign partial_star = rating | minus: full_stars %}
+        {% assign empty_stars = 5 | minus: full_stars | minus: 1 %}
+
+        {% for i in (1..full_stars) %}
+          <svg class="tw-w-4 tw-h-4 tw-text-black" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+        {% endfor %}
+        
+        {% if partial_star > 0 %}
+          <div class="tw-relative tw-w-4 tw-h-4">
+            <svg class="tw-absolute tw-w-4 tw-h-4 tw-text-gray-300" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+            <div class="tw-absolute tw-overflow-hidden" style="width: {{ partial_star | times: 100 }}%;">
+              <svg class="tw-w-4 tw-h-4 tw-text-black" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            </div>
+          </div>
+          {% assign empty_stars = 5 | minus: full_stars | minus: 1 %}
+        {% else %}
+          {% assign empty_stars = 5 | minus: full_stars %}
+        {% endif %}
+        
+        {% for i in (1..empty_stars) %}
+          {% if empty_stars > 0 %}
+            <svg class="tw-w-4 tw-h-4 tw-text-gray-300" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+            </svg>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <span class="tw-text-sm tw-text-gray-500">{{ review_count }} Reviews</span>
+    </div>
+
+    <div class="tw-flex tw-items-center tw-gap-2">
+      <span class="tw-text-lg tw-font-bold tw-text-gray-900">
+        {{ product.price | money | default: '$104.95' }}
+      </span>
+    </div>
+  </div>
+</div>

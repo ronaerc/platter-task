@@ -1,0 +1,403 @@
+{% comment %}
+  Section: Best Sellers
+  File: sections/best-sellers.liquid
+{% endcomment %}
+
+<section class="best-sellers tw-py-8 md:tw-py-12 lg:tw-py-16">
+  <div class="tw-max-w-[160rem] tw-mx-auto tw-px-4 md:tw-px-6 lg:tw-px-8">
+    <div class="tw-flex tw-items-center tw-justify-between tw-mb-6 md:tw-mb-8">
+      <h2 class="tw-text-2xl md:tw-text-3xl lg:tw-text-4xl tw-font-black tw-text-gray-900">
+        {{ section.settings.heading }}
+      </h2>
+      {% if section.settings.show_view_all %}
+        <a 
+          href="{{ section.settings.view_all_link }}" 
+          class="tw-hidden md:tw-flex tw-items-center tw-gap-2 tw-text-sm tw-text-gray-600 hover:tw-text-gray-900 tw-transition-colors"
+        >
+          {{ section.settings.view_all_text }}
+          <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-4 tw-w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="tw-hidden md:tw-block">
+    <div class="desktop-slider-wrapper">
+      <div 
+        id="desktop-slider-{{ section.id }}" 
+        class="desktop-slider"
+      >
+        <div class="desktop-slider-track">
+          {% for block in section.blocks %}
+            <div class="desktop-slider-card">
+              {% render 'best-seller-card', block: block, index: forloop.index %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    
+    <div class="tw-max-w-[160rem] tw-mx-auto tw-px-4 md:tw-px-6 lg:tw-px-8 tw-mt-6">
+      <div 
+        id="scrollbar-track-{{ section.id }}" 
+        class="scrollbar-track"
+      >
+        <div 
+          id="scrollbar-thumb-{{ section.id }}" 
+          class="scrollbar-thumb"
+        ></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="md:tw-hidden tw-max-w-[160rem] tw-mx-auto tw-px-4">
+    <div class="tw-grid tw-grid-cols-2 tw-gap-4">
+      {% for block in section.blocks limit: 4 %}
+        {% render 'best-seller-card', block: block, index: forloop.index %}
+      {% endfor %}
+    </div>
+
+    {% if section.blocks.size > 4 %}
+      <div 
+        id="mobile-hidden-products-{{ section.id }}" 
+        class="tw-grid tw-grid-cols-2 tw-gap-4 tw-overflow-hidden tw-transition-all tw-duration-500 tw-ease-in-out"
+        style="max-height: 0; opacity: 0; margin-top: 0;"
+      >
+        {% for block in section.blocks offset: 4 %}
+          <div class="tw-pt-4">
+            {% render 'best-seller-card', block: block, index: forloop.index | plus: 4 %}
+          </div>
+        {% endfor %}
+      </div>
+
+      <div class="tw-flex tw-justify-center tw-mt-6">
+        <button 
+          id="show-more-btn-{{ section.id }}"
+          class="tw-bg-gray-900 tw-text-white tw-px-8 tw-py-3 tw-rounded-full tw-text-sm tw-font-medium hover:tw-bg-gray-800 tw-transition-colors tw-w-full tw-max-w-xs"
+        >
+          {{ section.settings.show_more_text }}
+        </button>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+<style>
+  .desktop-slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .desktop-slider {
+    --container-max-width: 160rem;
+    --container-padding: 2rem;
+    --slider-gap: 1.5rem;
+    
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .desktop-slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .desktop-slider-track {
+    display: inline-flex;
+    gap: var(--slider-gap);
+    padding-left: max(var(--container-padding), calc((100vw - var(--container-max-width)) / 2 + var(--container-padding)));
+    padding-right: var(--container-padding);
+    padding-bottom: 0.5rem;
+  }
+  
+  .desktop-slider-card {
+    flex: 0 0 300px;
+    width: 300px;
+  }
+  
+  @media (max-width: 1024px) {
+    .desktop-slider {
+      --container-padding: 1.5rem;
+    }
+    
+    .desktop-slider-card {
+      flex: 0 0 280px;
+      width: 280px;
+    }
+  }
+  
+  .scrollbar-track {
+    position: relative;
+    height: 2px;
+    background-color: #e5e5e5;
+    border-radius: 9999px;
+    cursor: pointer;
+  }
+  
+  .scrollbar-thumb {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2px;
+    background-color: #171717;
+    border-radius: 9999px;
+    cursor: grab;
+    transition: height 0.15s ease;
+  }
+  
+  .scrollbar-thumb:hover,
+  .scrollbar-thumb.is-dragging {
+    height: 6px;
+  }
+  
+  .scrollbar-thumb:active {
+    cursor: grabbing;
+  }
+  
+  .scrollbar-track:hover .scrollbar-thumb {
+    height: 6px;
+  }
+</style>
+
+<script>
+  (function() {
+    const sectionId = '{{ section.id }}';
+    const slider = document.getElementById('desktop-slider-' + sectionId);
+    const scrollbarTrack = document.getElementById('scrollbar-track-' + sectionId);
+    const scrollbarThumb = document.getElementById('scrollbar-thumb-' + sectionId);
+    const showMoreBtn = document.getElementById('show-more-btn-' + sectionId);
+    const hiddenProducts = document.getElementById('mobile-hidden-products-' + sectionId);
+    
+    if (slider && scrollbarTrack && scrollbarThumb) {
+      let isDragging = false;
+      let startX = 0;
+      let scrollLeft = 0;
+      
+      function updateScrollbar() {
+        const scrollWidth = slider.scrollWidth;
+        const clientWidth = slider.clientWidth;
+        const scrollRatio = clientWidth / scrollWidth;
+        const thumbWidth = Math.max(scrollRatio * 100, 10);
+        
+        const maxScroll = scrollWidth - clientWidth;
+        const scrollProgress = maxScroll > 0 ? slider.scrollLeft / maxScroll : 0;
+        const maxThumbLeft = 100 - thumbWidth;
+        const thumbLeft = scrollProgress * maxThumbLeft;
+        
+        scrollbarThumb.style.width = thumbWidth + '%';
+        scrollbarThumb.style.left = thumbLeft + '%';
+      }
+      
+      scrollbarTrack.addEventListener('click', function(e) {
+        if (e.target === scrollbarThumb) return;
+        
+        const trackRect = scrollbarTrack.getBoundingClientRect();
+        const clickPosition = (e.clientX - trackRect.left) / trackRect.width;
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        
+        slider.scrollTo({
+          left: clickPosition * maxScroll,
+          behavior: 'smooth'
+        });
+      });
+      
+      scrollbarThumb.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        scrollbarThumb.classList.add('is-dragging');
+        startX = e.clientX;
+        scrollLeft = slider.scrollLeft;
+        e.preventDefault();
+      });
+      
+      document.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        
+        const trackRect = scrollbarTrack.getBoundingClientRect();
+        const deltaX = e.clientX - startX;
+        const deltaRatio = deltaX / trackRect.width;
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        
+        slider.scrollLeft = scrollLeft + (deltaRatio * maxScroll);
+      });
+      
+      document.addEventListener('mouseup', function() {
+        isDragging = false;
+        scrollbarThumb.classList.remove('is-dragging');
+      });
+      
+      scrollbarThumb.addEventListener('touchstart', function(e) {
+        isDragging = true;
+        scrollbarThumb.classList.add('is-dragging');
+        startX = e.touches[0].clientX;
+        scrollLeft = slider.scrollLeft;
+      }, { passive: true });
+      
+      document.addEventListener('touchmove', function(e) {
+        if (!isDragging) return;
+        
+        const trackRect = scrollbarTrack.getBoundingClientRect();
+        const deltaX = e.touches[0].clientX - startX;
+        const deltaRatio = deltaX / trackRect.width;
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        
+        slider.scrollLeft = scrollLeft + (deltaRatio * maxScroll);
+      }, { passive: true });
+      
+      document.addEventListener('touchend', function() {
+        isDragging = false;
+        scrollbarThumb.classList.remove('is-dragging');
+      });
+      
+      slider.addEventListener('scroll', updateScrollbar);
+      window.addEventListener('resize', updateScrollbar);
+      
+      updateScrollbar();
+    }
+    
+    if (showMoreBtn && hiddenProducts) {
+      showMoreBtn.addEventListener('click', function() {
+        const isExpanded = hiddenProducts.style.maxHeight !== '0px';
+        
+        if (isExpanded) {
+          hiddenProducts.style.maxHeight = '0';
+          hiddenProducts.style.opacity = '0';
+          hiddenProducts.style.marginTop = '0';
+          showMoreBtn.textContent = '{{ section.settings.show_more_text }}';
+        } else {
+          hiddenProducts.style.maxHeight = hiddenProducts.scrollHeight + 'px';
+          hiddenProducts.style.opacity = '1';
+          hiddenProducts.style.marginTop = '1rem';
+          showMoreBtn.textContent = '{{ section.settings.show_less_text }}';
+        }
+      });
+    }
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Best Sellers",
+  "tag": "section",
+  "class": "best-sellers-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Best Sellers"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_view_all",
+      "label": "Show 'View All' link",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "view_all_text",
+      "label": "View All Text",
+      "default": "Shop All Best Sellers"
+    },
+    {
+      "type": "url",
+      "id": "view_all_link",
+      "label": "View All Link"
+    },
+    {
+      "type": "text",
+      "id": "show_more_text",
+      "label": "Show More Button Text",
+      "default": "Show More"
+    },
+    {
+      "type": "text",
+      "id": "show_less_text",
+      "label": "Show Less Button Text",
+      "default": "Show Less"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom Image (optional)"
+        },
+        {
+          "type": "image_picker",
+          "id": "hover_image",
+          "label": "Hover Image (optional)"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Card Background Color",
+          "default": "#f5f5f5"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_best_seller_badge",
+          "label": "Show Best Seller Badge",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_sale_badge",
+          "label": "Show Sale Badge",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "sale_badge_text",
+          "label": "Sale Badge Text",
+          "default": "SAVE 10%"
+        },
+      {
+        "type": "range",
+        "id": "rating",
+        "label": "Star Rating",
+        "min": 0,
+        "max": 5,
+        "step": 0.5,
+        "default": 4.5
+      },
+      {
+        "type": "text",
+        "id": "review_count",
+        "label": "Review Count",
+        "default": "1,234"
+      }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Best Sellers",
+      "blocks": [
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" },
+        { "type": "product" }
+      ]
+    }
+  ]
+}
+{% endschema %}

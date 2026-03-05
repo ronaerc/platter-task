@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Best Sellers</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      prefix: 'tw-',
+    }
+  </script>
+</head>
+<body class="tw-pb-32">
+<section class="best-sellers tw-py-8 md:tw-py-12 lg:tw-py-16" aria-labelledby="best-sellers-heading">
+  <div class="md:tw-max-w-[160rem] tw-mx-auto tw-px-4 md:tw-px-6 lg:tw-px-8">
+    <div class="tw-flex tw-items-center tw-justify-between tw-mb-6 md:tw-mb-8">
+      <h2 id="best-sellers-heading" class="tw-text-2xl md:tw-text-3xl lg:tw-text-4xl tw-font-black tw-text-gray-900">
+        Best Sellers
+      </h2>
+      <a href="#" class="tw-hidden md:tw-flex tw-items-center tw-gap-2 tw-text-sm tw-text-gray-600 hover:tw-text-gray-900 tw-transition-colors focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900">
+        Shop All Best Sellers
+        <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-4 tw-w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="tw-hidden md:tw-block">
+    <div class="desktop-slider-wrapper">
+      <a href="#after-slider" class="tw-sr-only focus:tw-not-sr-only focus:tw-absolute focus:tw-z-50 focus:tw-bg-white focus:tw-p-2 focus:tw-text-gray-900">
+        Skip product carousel
+      </a>
+      <div id="desktop-slider" class="desktop-slider" role="region" aria-label="Best Sellers product carousel" tabindex="0">
+        <ul class="desktop-slider-track" role="list" aria-label="Best selling products">
+          <li class="desktop-slider-card" role="listitem">
+            <article class="product-card tw-group" aria-labelledby="product-title-1">
+              <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900" style="background-color: #f5f5f5;" aria-label="Product Title - View product details" tabindex="-1">
+                <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+                  <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                    <span class="tw-sr-only">Product status: </span>Best Seller
+                  </span>
+                  <span class="tw-bg-[#4A7C59] tw-text-white tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                    <span class="tw-sr-only">Discount: </span>SAVE 10%
+                  </span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=800&fit=crop" alt="Product Title" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out group-hover:tw-opacity-0" loading="lazy" width="800" height="800">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=800&fit=crop" alt="Product Title" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out tw-opacity-0 group-hover:tw-opacity-100" aria-hidden="true" loading="lazy" width="800" height="800">
+              </a>
+              <div class="tw-space-y-2">
+                <a href="#" class="tw-block focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900">
+                  <h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug hover:tw-text-gray-600 tw-transition-colors">Product Title</h3>
+                </a>
+                <div class="tw-flex tw-items-center tw-gap-1">
+                  <div class="tw-flex tw-items-center star-rating" data-rating="4.5"></div>
+                  <span class="tw-sr-only">4.5 out of 5 stars,</span>
+                  <span class="tw-text-sm tw-text-gray-500"><span class="tw-sr-only">based on </span>1,234 Reviews</span>
+                </div>
+                <div class="tw-flex tw-items-center tw-gap-2">
+                  <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">
+                    <span class="tw-sr-only">Price: </span>
+                    <span>$104.95</span>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="desktop-slider-card" role="listitem">
+            <article class="product-card tw-group" aria-labelledby="product-title-2">
+              <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900" style="background-color: #e8f0e8;" aria-label="Another Product - View product details" tabindex="-1">
+                <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+                  <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                    <span class="tw-sr-only">Product status: </span>Best Seller
+                  </span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800&h=800&fit=crop" alt="Another Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out group-hover:tw-opacity-0" loading="lazy" width="800" height="800">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&h=800&fit=crop" alt="Another Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out tw-opacity-0 group-hover:tw-opacity-100" aria-hidden="true" loading="lazy" width="800" height="800">
+              </a>
+              <div class="tw-space-y-2">
+                <a href="#" class="tw-block focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900">
+                  <h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug hover:tw-text-gray-600 tw-transition-colors">Another Product</h3>
+                </a>
+                <div class="tw-flex tw-items-center tw-gap-1">
+                  <div class="tw-flex tw-items-center star-rating" data-rating="5"></div>
+                  <span class="tw-sr-only">5 out of 5 stars,</span>
+                  <span class="tw-text-sm tw-text-gray-500"><span class="tw-sr-only">based on </span>892 Reviews</span>
+                </div>
+                <div class="tw-flex tw-items-center tw-gap-2">
+                  <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">
+                    <span class="tw-sr-only">Price: </span>
+                    <span>$79.99</span>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="desktop-slider-card" role="listitem">
+            <article class="product-card tw-group" aria-labelledby="product-title-3">
+              <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900" style="background-color: #f0e8e8;" aria-label="Third Product - View product details" tabindex="-1">
+                <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+                  <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                    <span class="tw-sr-only">Product status: </span>Best Seller
+                  </span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&h=800&fit=crop" alt="Third Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out group-hover:tw-opacity-0" loading="lazy" width="800" height="800">
+                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800&h=800&fit=crop" alt="Third Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out tw-opacity-0 group-hover:tw-opacity-100" aria-hidden="true" loading="lazy" width="800" height="800">
+              </a>
+              <div class="tw-space-y-2">
+                <a href="#" class="tw-block focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900">
+                  <h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug hover:tw-text-gray-600 tw-transition-colors">Third Product</h3>
+                </a>
+                <div class="tw-flex tw-items-center tw-gap-1">
+                  <div class="tw-flex tw-items-center star-rating" data-rating="4"></div>
+                  <span class="tw-sr-only">4 out of 5 stars,</span>
+                  <span class="tw-text-sm tw-text-gray-500"><span class="tw-sr-only">based on </span>567 Reviews</span>
+                </div>
+                <div class="tw-flex tw-items-center tw-gap-2">
+                  <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">
+                    <span class="tw-sr-only">Price: </span>
+                    <span>$149.00</span>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="desktop-slider-card" role="listitem">
+            <article class="product-card tw-group" aria-labelledby="product-title-4">
+              <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900" style="background-color: #e8e8f0;" aria-label="Fourth Product - View product details" tabindex="-1">
+                <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+                  <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                    <span class="tw-sr-only">Product status: </span>Best Seller
+                  </span>
+                  <span class="tw-bg-[#4A7C59] tw-text-white tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                    <span class="tw-sr-only">Discount: </span>SAVE 15%
+                  </span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=800&h=800&fit=crop" alt="Fourth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out group-hover:tw-opacity-0" loading="lazy" width="800" height="800">
+                <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=800&h=800&fit=crop" alt="Fourth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out tw-opacity-0 group-hover:tw-opacity-100" aria-hidden="true" loading="lazy" width="800" height="800">
+              </a>
+              <div class="tw-space-y-2">
+                <a href="#" class="tw-block focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900">
+                  <h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug hover:tw-text-gray-600 tw-transition-colors">Fourth Product</h3>
+                </a>
+                <div class="tw-flex tw-items-center tw-gap-1">
+                  <div class="tw-flex tw-items-center star-rating" data-rating="3.5"></div>
+                  <span class="tw-sr-only">3.5 out of 5 stars,</span>
+                  <span class="tw-text-sm tw-text-gray-500"><span class="tw-sr-only">based on </span>234 Reviews</span>
+                </div>
+                <div class="tw-flex tw-items-center tw-gap-2">
+                  <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">
+                    <span class="tw-sr-only">Price: </span>
+                    <span>$59.95</span>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="desktop-slider-card" role="listitem">
+            <article class="product-card tw-group" aria-labelledby="product-title-5">
+              <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900" style="background-color: #f5f0e8;" aria-label="Fifth Product - View product details" tabindex="-1">
+                <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+                  <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                    <span class="tw-sr-only">Product status: </span>Best Seller
+                  </span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=800&h=800&fit=crop" alt="Fifth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out group-hover:tw-opacity-0" loading="lazy" width="800" height="800">
+                <img src="https://images.unsplash.com/photo-1560343090-f0409e92791a?w=800&h=800&fit=crop" alt="Fifth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out tw-opacity-0 group-hover:tw-opacity-100" aria-hidden="true" loading="lazy" width="800" height="800">
+              </a>
+              <div class="tw-space-y-2">
+                <a href="#" class="tw-block focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900">
+                  <h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug hover:tw-text-gray-600 tw-transition-colors">Fifth Product</h3>
+                </a>
+                <div class="tw-flex tw-items-center tw-gap-1">
+                  <div class="tw-flex tw-items-center star-rating" data-rating="4.5"></div>
+                  <span class="tw-sr-only">4.5 out of 5 stars,</span>
+                  <span class="tw-text-sm tw-text-gray-500"><span class="tw-sr-only">based on </span>1,567 Reviews</span>
+                </div>
+                <div class="tw-flex tw-items-center tw-gap-2">
+                  <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">
+                    <span class="tw-sr-only">Price: </span>
+                    <span>$89.99</span>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li class="desktop-slider-card" role="listitem">
+            <article class="product-card tw-group" aria-labelledby="product-title-6">
+              <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900" style="background-color: #f5f5f5;" aria-label="Sixth Product - View product details" tabindex="-1">
+                <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+                  <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                    <span class="tw-sr-only">Product status: </span>Best Seller
+                  </span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=800&h=800&fit=crop" alt="Sixth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out group-hover:tw-opacity-0" loading="lazy" width="800" height="800">
+                <img src="https://images.unsplash.com/photo-1600185365926-3a2ce3cdb9eb?w=800&h=800&fit=crop" alt="Sixth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out tw-opacity-0 group-hover:tw-opacity-100" aria-hidden="true" loading="lazy" width="800" height="800">
+              </a>
+              <div class="tw-space-y-2">
+                <a href="#" class="tw-block focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900">
+                  <h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug hover:tw-text-gray-600 tw-transition-colors">Sixth Product</h3>
+                </a>
+                <div class="tw-flex tw-items-center tw-gap-1">
+                  <div class="tw-flex tw-items-center star-rating" data-rating="4"></div>
+                  <span class="tw-sr-only">4 out of 5 stars,</span>
+                  <span class="tw-text-sm tw-text-gray-500"><span class="tw-sr-only">based on </span>432 Reviews</span>
+                </div>
+                <div class="tw-flex tw-items-center tw-gap-2">
+                  <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">
+                    <span class="tw-sr-only">Price: </span>
+                    <span>$124.95</span>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="desktop-slider-card" role="listitem">
+            <article class="product-card tw-group" aria-labelledby="product-title-6">
+              <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900" style="background-color: #f5f5f5;" aria-label="Sixth Product - View product details" tabindex="-1">
+                <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+                  <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                    <span class="tw-sr-only">Product status: </span>Best Seller
+                  </span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&h=800&fit=crop" alt="Sixth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out group-hover:tw-opacity-0" loading="lazy" width="800" height="800">
+                <img src="https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?w=800&h=800&fit=crop" alt="Sixth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out tw-opacity-0 group-hover:tw-opacity-100" aria-hidden="true" loading="lazy" width="800" height="800">
+              </a>
+              <div class="tw-space-y-2">
+                <a href="#" class="tw-block focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900">
+                  <h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug hover:tw-text-gray-600 tw-transition-colors">Sixth Product</h3>
+                </a>
+                <div class="tw-flex tw-items-center tw-gap-1">
+                  <div class="tw-flex tw-items-center star-rating" data-rating="4"></div>
+                  <span class="tw-sr-only">4 out of 5 stars,</span>
+                  <span class="tw-text-sm tw-text-gray-500"><span class="tw-sr-only">based on </span>432 Reviews</span>
+                </div>
+                <div class="tw-flex tw-items-center tw-gap-2">
+                  <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">
+                    <span class="tw-sr-only">Price: </span>
+                    <span>$124.95</span>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="desktop-slider-card" role="listitem">
+            <article class="product-card tw-group" aria-labelledby="product-title-6">
+              <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900" style="background-color: #f5f5f5;" aria-label="Sixth Product - View product details" tabindex="-1">
+                <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+                  <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                    <span class="tw-sr-only">Product status: </span>Best Seller
+                  </span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1491637639811-60e2756cc1c7?w=800&h=800&fit=crop" alt="Sixth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out group-hover:tw-opacity-0" loading="lazy" width="800" height="800">
+                <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800&h=800&fit=crop" alt="Sixth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out tw-opacity-0 group-hover:tw-opacity-100" aria-hidden="true" loading="lazy" width="800" height="800">
+              </a>
+              <div class="tw-space-y-2">
+                <a href="#" class="tw-block focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900">
+                  <h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug hover:tw-text-gray-600 tw-transition-colors">Sixth Product</h3>
+                </a>
+                <div class="tw-flex tw-items-center tw-gap-1">
+                  <div class="tw-flex tw-items-center star-rating" data-rating="4"></div>
+                  <span class="tw-sr-only">4 out of 5 stars,</span>
+                  <span class="tw-text-sm tw-text-gray-500"><span class="tw-sr-only">based on </span>432 Reviews</span>
+                </div>
+                <div class="tw-flex tw-items-center tw-gap-2">
+                  <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">
+                    <span class="tw-sr-only">Price: </span>
+                    <span>$124.95</span>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="desktop-slider-card" role="listitem">
+            <article class="product-card tw-group" aria-labelledby="product-title-6">
+              <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900" style="background-color: #f5f5f5;" aria-label="Sixth Product - View product details" tabindex="-1">
+                <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+                  <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                    <span class="tw-sr-only">Product status: </span>Best Seller
+                  </span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&h=800&fit=crop" alt="Sixth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out group-hover:tw-opacity-0" loading="lazy" width="800" height="800">
+                <img src="https://images.unsplash.com/photo-1502920917128-1aa500764cbd?w=800&h=800&fit=crop" alt="Sixth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out tw-opacity-0 group-hover:tw-opacity-100" aria-hidden="true" loading="lazy" width="800" height="800">
+              </a>
+              <div class="tw-space-y-2">
+                <a href="#" class="tw-block focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900">
+                  <h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug hover:tw-text-gray-600 tw-transition-colors">Sixth Product</h3>
+                </a>
+                <div class="tw-flex tw-items-center tw-gap-1">
+                  <div class="tw-flex tw-items-center star-rating" data-rating="4"></div>
+                  <span class="tw-sr-only">4 out of 5 stars,</span>
+                  <span class="tw-text-sm tw-text-gray-500"><span class="tw-sr-only">based on </span>432 Reviews</span>
+                </div>
+                <div class="tw-flex tw-items-center tw-gap-2">
+                  <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">
+                    <span class="tw-sr-only">Price: </span>
+                    <span>$124.95</span>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </li>
+          <li class="desktop-slider-card" role="listitem">
+            <article class="product-card tw-group" aria-labelledby="product-title-6">
+              <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900" style="background-color: #f5f5f5;" aria-label="Sixth Product - View product details" tabindex="-1">
+                <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+                  <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                    <span class="tw-sr-only">Product status: </span>Best Seller
+                  </span>
+                </div>
+                <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800&h=800&fit=crop" alt="Sixth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out group-hover:tw-opacity-0" loading="lazy" width="800" height="800">
+                <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?w=800&h=800&fit=crop" alt="Sixth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover tw-transition-opacity tw-duration-300 tw-ease-in-out tw-opacity-0 group-hover:tw-opacity-100" aria-hidden="true" loading="lazy" width="800" height="800">
+              </a>
+              <div class="tw-space-y-2">
+                <a href="#" class="tw-block focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900">
+                  <h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug hover:tw-text-gray-600 tw-transition-colors">Sixth Product</h3>
+                </a>
+                <div class="tw-flex tw-items-center tw-gap-1">
+                  <div class="tw-flex tw-items-center star-rating" data-rating="4"></div>
+                  <span class="tw-sr-only">4 out of 5 stars,</span>
+                  <span class="tw-text-sm tw-text-gray-500"><span class="tw-sr-only">based on </span>432 Reviews</span>
+                </div>
+                <div class="tw-flex tw-items-center tw-gap-2">
+                  <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">
+                    <span class="tw-sr-only">Price: </span>
+                    <span>$124.95</span>
+                  </p>
+                </div>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="tw-max-w-[160rem] tw-mx-auto tw-px-4 md:tw-px-6 lg:tw-px-8 tw-mt-6">
+      <div id="scrollbar-track" class="scrollbar-track" role="slider" aria-label="Scroll through products" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-orientation="horizontal" tabindex="0">
+        <div id="scrollbar-thumb" class="scrollbar-thumb" aria-hidden="true"></div>
+      </div>
+      <div class="tw-sr-only" aria-live="polite" id="scroll-status"></div>
+    </div>
+    <div id="after-slider"></div>
+  </div>
+
+  <!-- Mobile Grid -->
+  <div class="md:tw-hidden tw-mx-auto tw-px-4">
+    <ul class="tw-grid tw-grid-cols-2 tw-gap-4">
+      <li>
+        <article class="product-card tw-group" aria-labelledby="mobile-product-title-1">
+          <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900" style="background-color: #f5f5f5;" aria-label="Product Title - View product details" tabindex="-1">
+            <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+              <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                <span class="tw-sr-only">Product status: </span>Best Seller
+              </span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=800&fit=crop" alt="Product Title" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover" loading="lazy" width="800" height="800">
+          </a>
+          <div class="tw-space-y-2">
+            <a href="#" class="tw-block focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900">
+              <h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug hover:tw-text-gray-600 tw-transition-colors">Product Title</h3>
+            </a>
+            <div class="tw-flex tw-items-center tw-gap-1">
+              <div class="tw-flex tw-items-center star-rating" data-rating="4.5"></div>
+              <span class="tw-text-sm tw-text-gray-500">1,234 Reviews</span>
+            </div>
+            <div class="tw-flex tw-items-center tw-gap-2">
+              <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">$104.95</p>
+            </div>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="product-card tw-group" aria-labelledby="mobile-product-title-2">
+          <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900" style="background-color: #e8f0e8;" aria-label="Another Product - View product details" tabindex="-1">
+            <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+              <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                <span class="tw-sr-only">Product status: </span>Best Seller
+              </span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=800&h=800&fit=crop" alt="Another Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover" loading="lazy" width="800" height="800">
+          </a>
+          <div class="tw-space-y-2">
+            <a href="#" class="tw-block focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900">
+              <h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug hover:tw-text-gray-600 tw-transition-colors">Another Product</h3>
+            </a>
+            <div class="tw-flex tw-items-center tw-gap-1">
+              <div class="tw-flex tw-items-center star-rating" data-rating="5"></div>
+              <span class="tw-text-sm tw-text-gray-500">892 Reviews</span>
+            </div>
+            <div class="tw-flex tw-items-center tw-gap-2">
+              <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">$79.99</p>
+            </div>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="product-card tw-group" aria-labelledby="mobile-product-title-3">
+          <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900" style="background-color: #f0e8e8;" aria-label="Third Product - View product details" tabindex="-1">
+            <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+              <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                <span class="tw-sr-only">Product status: </span>Best Seller
+              </span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&h=800&fit=crop" alt="Third Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover" loading="lazy" width="800" height="800">
+          </a>
+          <div class="tw-space-y-2">
+            <a href="#" class="tw-block focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900">
+              <h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug hover:tw-text-gray-600 tw-transition-colors">Third Product</h3>
+            </a>
+            <div class="tw-flex tw-items-center tw-gap-1">
+              <div class="tw-flex tw-items-center star-rating" data-rating="4"></div>
+              <span class="tw-text-sm tw-text-gray-500">567 Reviews</span>
+            </div>
+            <div class="tw-flex tw-items-center tw-gap-2">
+              <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">$149.00</p>
+            </div>
+          </div>
+        </article>
+      </li>
+      <li>
+        <article class="product-card tw-group" aria-labelledby="mobile-product-title-4">
+          <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4 focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900" style="background-color: #e8e8f0;" aria-label="Fourth Product - View product details" tabindex="-1">
+            <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+              <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black" role="status">
+                <span class="tw-sr-only">Product status: </span>Best Seller
+              </span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=800&h=800&fit=crop" alt="Fourth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover" loading="lazy" width="800" height="800">
+          </a>
+          <div class="tw-space-y-2">
+            <a href="#" class="tw-block focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900">
+              <h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug hover:tw-text-gray-600 tw-transition-colors">Fourth Product</h3>
+            </a>
+            <div class="tw-flex tw-items-center tw-gap-1">
+              <div class="tw-flex tw-items-center star-rating" data-rating="3.5"></div>
+              <span class="tw-text-sm tw-text-gray-500">234 Reviews</span>
+            </div>
+            <div class="tw-flex tw-items-center tw-gap-2">
+              <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">$59.95</p>
+            </div>
+          </div>
+        </article>
+      </li>
+    </ul>
+
+    <!-- Hidden products for mobile -->
+    <div id="mobile-hidden-products" class="tw-grid tw-grid-cols-2 tw-gap-4 tw-overflow-hidden tw-transition-all tw-duration-500 tw-ease-in-out" style="max-height: 0; opacity: 0; margin-top: 0;" aria-hidden="true" role="list">
+      <div class="tw-pt-4">
+        <article class="product-card tw-group">
+          <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4" style="background-color: #f5f0e8;">
+            <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+              <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black">Best Seller</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=800&h=800&fit=crop" alt="Fifth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover" loading="lazy" width="800" height="800">
+          </a>
+          <div class="tw-space-y-2">
+            <a href="#"><h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug">Fifth Product</h3></a>
+            <div class="tw-flex tw-items-center tw-gap-1">
+              <div class="tw-flex tw-items-center star-rating" data-rating="4.5"></div>
+              <span class="tw-text-sm tw-text-gray-500">1,567 Reviews</span>
+            </div>
+            <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">$89.99</p>
+          </div>
+        </article>
+      </div>
+      <div class="tw-pt-4">
+        <article class="product-card tw-group">
+          <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4" style="background-color: #f5f5f5;">
+            <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+              <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black">Best Seller</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=800&h=800&fit=crop" alt="Sixth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover" loading="lazy" width="800" height="800">
+          </a>
+          <div class="tw-space-y-2">
+            <a href="#"><h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug">Sixth Product</h3></a>
+            <div class="tw-flex tw-items-center tw-gap-1">
+              <div class="tw-flex tw-items-center star-rating" data-rating="4"></div>
+              <span class="tw-text-sm tw-text-gray-500">432 Reviews</span>
+            </div>
+            <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">$124.95</p>
+          </div>
+        </article>
+      </div>
+      <div class="tw-pt-4">
+        <article class="product-card tw-group">
+          <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4" style="background-color: #f5f5f5;">
+            <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+              <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black">Best Seller</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&h=800&fit=crop" alt="Sixth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover" loading="lazy" width="800" height="800">
+          </a>
+          <div class="tw-space-y-2">
+            <a href="#"><h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug">Sixth Product</h3></a>
+            <div class="tw-flex tw-items-center tw-gap-1">
+              <div class="tw-flex tw-items-center star-rating" data-rating="4"></div>
+              <span class="tw-text-sm tw-text-gray-500">432 Reviews</span>
+            </div>
+            <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">$124.95</p>
+          </div>
+        </article>
+      </div>
+      <div class="tw-pt-4">
+        <article class="product-card tw-group">
+          <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4" style="background-color: #f5f5f5;">
+            <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+              <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black">Best Seller</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1491637639811-60e2756cc1c7?w=800&h=800&fit=crop" alt="Sixth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover" loading="lazy" width="800" height="800">
+          </a>
+          <div class="tw-space-y-2">
+            <a href="#"><h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug">Sixth Product</h3></a>
+            <div class="tw-flex tw-items-center tw-gap-1">
+              <div class="tw-flex tw-items-center star-rating" data-rating="4"></div>
+              <span class="tw-text-sm tw-text-gray-500">432 Reviews</span>
+            </div>
+            <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">$124.95</p>
+          </div>
+        </article>
+      </div>
+      <div class="tw-pt-4">
+        <article class="product-card tw-group">
+          <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4" style="background-color: #f5f5f5;">
+            <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+              <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black">Best Seller</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=800&h=800&fit=crop" alt="Sixth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover" loading="lazy" width="800" height="800">
+          </a>
+          <div class="tw-space-y-2">
+            <a href="#"><h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug">Sixth Product</h3></a>
+            <div class="tw-flex tw-items-center tw-gap-1">
+              <div class="tw-flex tw-items-center star-rating" data-rating="4"></div>
+              <span class="tw-text-sm tw-text-gray-500">432 Reviews</span>
+            </div>
+            <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">$124.95</p>
+          </div>
+        </article>
+      </div>
+      <div class="tw-pt-4">
+        <article class="product-card tw-group">
+          <a href="#" class="tw-block tw-relative tw-aspect-square tw-overflow-hidden tw-rounded-2xl tw-mb-4" style="background-color: #f5f5f5;">
+            <div class="tw-absolute tw-top-3 tw-left-3 tw-right-3 tw-flex tw-justify-between tw-items-start tw-z-10">
+              <span class="tw-bg-white tw-text-black tw-text-xs tw-font-bold tw-px-4 tw-py-1.5 tw-rounded-full tw-uppercase tw-tracking-wide tw-border tw-border-black">Best Seller</span>
+            </div>
+            <img src="https://images.unsplash.com/photo-1484704849700-f032a568e944?w=800&h=800&fit=crop" alt="Sixth Product" class="tw-absolute tw-inset-0 tw-w-full tw-h-full tw-object-cover" loading="lazy" width="800" height="800">
+          </a>
+          <div class="tw-space-y-2">
+            <a href="#"><h3 class="tw-text-base tw-font-bold tw-text-gray-900 tw-uppercase tw-leading-snug">Sixth Product</h3></a>
+            <div class="tw-flex tw-items-center tw-gap-1">
+              <div class="tw-flex tw-items-center star-rating" data-rating="4"></div>
+              <span class="tw-text-sm tw-text-gray-500">432 Reviews</span>
+            </div>
+            <p class="tw-text-lg tw-font-bold tw-text-gray-900 tw-m-0">$124.95</p>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="tw-flex tw-justify-center tw-mt-6">
+      <button id="show-more-btn" class="tw-bg-gray-900 tw-text-white tw-px-8 tw-py-3 tw-rounded-full tw-text-sm tw-font-medium hover:tw-bg-gray-800 tw-transition-colors tw-w-full tw-max-w-xs" aria-expanded="false" aria-controls="mobile-hidden-products" type="button">
+        <span class="button-text">Show More</span>
+        <span class="tw-sr-only">, 2 more products</span>
+      </button>
+    </div>
+  </div>
+</section>
+</body>
+
+
+<style>
+  .desktop-slider-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .desktop-slider {
+    --container-max-width: 160rem;
+    --container-padding: 2rem;
+    --slider-gap: 1.5rem;
+    
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .desktop-slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .desktop-slider-track {
+    display: inline-flex;
+    gap: var(--slider-gap);
+    padding-left: max(var(--container-padding), calc((100vw - var(--container-max-width)) / 2 + var(--container-padding)));
+    padding-right: var(--container-padding);
+    padding-bottom: 0.5rem;
+    list-style: none;
+    margin: 0;
+  }
+  
+  .desktop-slider-card {
+    flex: 0 0 300px;
+    width: 300px;
+  }
+  
+  @media (max-width: 1024px) {
+    .desktop-slider {
+      --container-padding: 1.5rem;
+    }
+    
+    .desktop-slider-card {
+      flex: 0 0 280px;
+      width: 280px;
+    }
+  }
+  
+  .scrollbar-track {
+    position: relative;
+    height: 2px;
+    background-color: #e5e5e5;
+    border-radius: 9999px;
+    cursor: pointer;
+  }
+  
+  .scrollbar-thumb {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2px;
+    background-color: #171717;
+    border-radius: 9999px;
+    cursor: grab;
+    transition: height 0.15s ease;
+  }
+  
+  .scrollbar-thumb:hover,
+  .scrollbar-thumb.is-dragging {
+    height: 6px;
+  }
+  
+  .scrollbar-thumb:active {
+    cursor: grabbing;
+  }
+  
+  .scrollbar-track:hover .scrollbar-thumb,
+  .scrollbar-track:focus .scrollbar-thumb {
+    height: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .desktop-slider,
+    #mobile-hidden-products,
+    .scrollbar-thumb {
+      transition: none;
+    }
+    
+    .desktop-slider {
+      scroll-behavior: auto;
+    }
+  }
+</style>
+
+<script>
+  (function() {
+    // Generate star ratings
+    function generateStars(rating) {
+      const fullStars = Math.floor(rating);
+      const partialStar = rating - fullStars;
+      const emptyStars = partialStar > 0 ? 5 - fullStars - 1 : 5 - fullStars;
+      
+      let html = '';
+      
+      // Full stars
+      for (let i = 0; i < fullStars; i++) {
+        html += '<svg class="tw-w-4 tw-h-4 tw-text-black" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
+      }
+      
+      // Partial star
+      if (partialStar > 0) {
+        html += `<div class="tw-relative tw-w-4 tw-h-4">
+          <svg class="tw-absolute tw-w-4 tw-h-4 tw-text-gray-300" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          <div class="tw-absolute tw-overflow-hidden" style="width: ${partialStar * 100}%;">
+            <svg class="tw-w-4 tw-h-4 tw-text-black" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+        </div>`;
+      }
+      
+      // Empty stars
+      for (let i = 0; i < emptyStars; i++) {
+        html += '<svg class="tw-w-4 tw-h-4 tw-text-gray-300" viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>';
+      }
+      
+      return html;
+    }
+    
+    // Initialize star ratings
+    document.querySelectorAll('.star-rating').forEach(function(el) {
+      const rating = parseFloat(el.dataset.rating) || 0;
+      el.innerHTML = generateStars(rating);
+    });
+
+    // Desktop slider functionality
+    const slider = document.getElementById('desktop-slider');
+    const scrollbarTrack = document.getElementById('scrollbar-track');
+    const scrollbarThumb = document.getElementById('scrollbar-thumb');
+    const showMoreBtn = document.getElementById('show-more-btn');
+    const hiddenProducts = document.getElementById('mobile-hidden-products');
+    
+    if (slider && scrollbarTrack && scrollbarThumb) {
+      let isDragging = false;
+      let startX = 0;
+      let scrollLeft = 0;
+      
+      function updateScrollbar() {
+        const scrollWidth = slider.scrollWidth;
+        const clientWidth = slider.clientWidth;
+        const scrollRatio = clientWidth / scrollWidth;
+        const thumbWidth = Math.max(scrollRatio * 100, 10);
+        
+        const maxScroll = scrollWidth - clientWidth;
+        const scrollProgress = maxScroll > 0 ? slider.scrollLeft / maxScroll : 0;
+        const maxThumbLeft = 100 - thumbWidth;
+        const thumbLeft = scrollProgress * maxThumbLeft;
+        
+        scrollbarThumb.style.width = thumbWidth + '%';
+        scrollbarThumb.style.left = thumbLeft + '%';
+      }
+      
+      scrollbarTrack.addEventListener('click', function(e) {
+        if (e.target === scrollbarThumb) return;
+        
+        const trackRect = scrollbarTrack.getBoundingClientRect();
+        const clickPosition = (e.clientX - trackRect.left) / trackRect.width;
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        
+        slider.scrollTo({
+          left: clickPosition * maxScroll,
+          behavior: 'smooth'
+        });
+      });
+      
+      scrollbarThumb.addEventListener('mousedown', function(e) {
+        isDragging = true;
+        scrollbarThumb.classList.add('is-dragging');
+        startX = e.clientX;
+        scrollLeft = slider.scrollLeft;
+        e.preventDefault();
+      });
+      
+      document.addEventListener('mousemove', function(e) {
+        if (!isDragging) return;
+        
+        const trackRect = scrollbarTrack.getBoundingClientRect();
+        const deltaX = e.clientX - startX;
+        const deltaRatio = deltaX / trackRect.width;
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        
+        slider.scrollLeft = scrollLeft + (deltaRatio * maxScroll);
+      });
+      
+      document.addEventListener('mouseup', function() {
+        isDragging = false;
+        scrollbarThumb.classList.remove('is-dragging');
+      });
+      
+      scrollbarThumb.addEventListener('touchstart', function(e) {
+        isDragging = true;
+        scrollbarThumb.classList.add('is-dragging');
+        startX = e.touches[0].clientX;
+        scrollLeft = slider.scrollLeft;
+      }, { passive: true });
+      
+      document.addEventListener('touchmove', function(e) {
+        if (!isDragging) return;
+        
+        const trackRect = scrollbarTrack.getBoundingClientRect();
+        const deltaX = e.touches[0].clientX - startX;
+        const deltaRatio = deltaX / trackRect.width;
+        const maxScroll = slider.scrollWidth - slider.clientWidth;
+        
+        slider.scrollLeft = scrollLeft + (deltaRatio * maxScroll);
+      }, { passive: true });
+      
+      document.addEventListener('touchend', function() {
+        isDragging = false;
+        scrollbarThumb.classList.remove('is-dragging');
+      });
+      
+      slider.addEventListener('scroll', updateScrollbar);
+      window.addEventListener('resize', updateScrollbar);
+      
+      updateScrollbar();
+    }
+    
+    // Mobile show more functionality
+    if (showMoreBtn && hiddenProducts) {
+      showMoreBtn.addEventListener('click', function() {
+        const isExpanded = hiddenProducts.style.maxHeight !== '0px';
+        const buttonText = showMoreBtn.querySelector('.button-text');
+        
+        if (isExpanded) {
+          hiddenProducts.style.maxHeight = '0';
+          hiddenProducts.style.opacity = '0';
+          hiddenProducts.style.marginTop = '0';
+          hiddenProducts.setAttribute('aria-hidden', 'true');
+          showMoreBtn.setAttribute('aria-expanded', 'false');
+          if (buttonText) buttonText.textContent = 'Show More';
+        } else {
+          hiddenProducts.style.maxHeight = hiddenProducts.scrollHeight + 'px';
+          hiddenProducts.style.opacity = '1';
+          hiddenProducts.style.marginTop = '1rem';
+          hiddenProducts.setAttribute('aria-hidden', 'false');
+          showMoreBtn.setAttribute('aria-expanded', 'true');
+          if (buttonText) buttonText.textContent = 'Show Less';
+        }
+      });
+    }
+  })();
+</script>
+
+</body>
+</html>

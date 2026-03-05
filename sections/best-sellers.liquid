@@ -10,7 +10,9 @@
         {{ section.settings.heading }}
       </h2>
       {% if section.settings.show_view_all %}
-        <a href="{{ section.settings.view_all_link }}" class="tw-hidden md:tw-flex tw-items-center tw-gap-2 tw-text-sm tw-text-gray-600 hover:tw-text-gray-900 tw-transition-colors focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900"
+        <a 
+          href="{{ section.settings.view_all_link }}" 
+          class="tw-hidden md:tw-flex tw-items-center tw-gap-2 tw-text-sm tw-text-gray-600 hover:tw-text-gray-900 tw-transition-colors focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900"
         >
           {{ section.settings.view_all_text }}
           <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-4 tw-w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
@@ -163,21 +165,8 @@
     cursor: grabbing;
   }
   
-  .scrollbar-track:hover .scrollbar-thumb,
-  .scrollbar-track:focus .scrollbar-thumb {
+  .scrollbar-track:hover .scrollbar-thumb {
     height: 6px;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .desktop-slider,
-    #mobile-hidden-products-{{ section.id }},
-    .scrollbar-thumb {
-        transition: none;
-    }
-    
-    .desktop-slider {
-        scroll-behavior: auto;
-    }
   }
 </style>
 

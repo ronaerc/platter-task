@@ -3,19 +3,17 @@
   File: sections/best-sellers.liquid
 {% endcomment %}
 
-<section class="best-sellers tw-py-8 md:tw-py-12 lg:tw-py-16">
+<section class="best-sellers tw-py-8 md:tw-py-12 lg:tw-py-16" aria-labelledby="best-sellers-heading-{{ section.id }}">
   <div class="tw-max-w-[160rem] tw-mx-auto tw-px-4 md:tw-px-6 lg:tw-px-8">
     <div class="tw-flex tw-items-center tw-justify-between tw-mb-6 md:tw-mb-8">
-      <h2 class="tw-text-2xl md:tw-text-3xl lg:tw-text-4xl tw-font-black tw-text-gray-900">
+      <h2 id="best-sellers-heading-{{ section.id }}" class="tw-text-2xl md:tw-text-3xl lg:tw-text-4xl tw-font-black tw-text-gray-900">
         {{ section.settings.heading }}
       </h2>
       {% if section.settings.show_view_all %}
-        <a 
-          href="{{ section.settings.view_all_link }}" 
-          class="tw-hidden md:tw-flex tw-items-center tw-gap-2 tw-text-sm tw-text-gray-600 hover:tw-text-gray-900 tw-transition-colors"
+        <a href="{{ section.settings.view_all_link }}" class="tw-hidden md:tw-flex tw-items-center tw-gap-2 tw-text-sm tw-text-gray-600 hover:tw-text-gray-900 tw-transition-colors focus:tw-outline-none focus:tw-ring-2 focus:tw-ring-offset-2 focus:tw-ring-gray-900"
         >
           {{ section.settings.view_all_text }}
-          <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-4 tw-w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg xmlns="http://www.w3.org/2000/svg" class="tw-h-4 tw-w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true" focusable="false">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
         </a>
@@ -25,45 +23,46 @@
 
   <div class="tw-hidden md:tw-block">
     <div class="desktop-slider-wrapper">
-      <div 
-        id="desktop-slider-{{ section.id }}" 
-        class="desktop-slider"
-      >
-        <div class="desktop-slider-track">
-          {% for block in section.blocks %}
-            <div class="desktop-slider-card">
-              {% render 'best-seller-card', block: block, index: forloop.index %}
-            </div>
-          {% endfor %}
+        <a href="#after-slider-{{ section.id }}" class="tw-sr-only focus:tw-not-sr-only focus:tw-absolute focus:tw-z-50 focus:tw-bg-white focus:tw-p-2 focus:tw-text-gray-900">
+            Skip product carousel
+        </a>
+        <div 
+            id="desktop-slider-{{ section.id }}" class="desktop-slider" role="region" aria-label="{{ section.settings.heading }} product carousel" tabindex="0">
+            <ul class="desktop-slider-track" role="list" aria-label="Best selling products">
+            {% for block in section.blocks %}
+                <li class="desktop-slider-card" role="listitem">
+                {% render 'best-seller-card', block: block, index: forloop.index %}
+                </li>
+            {% endfor %}
+            </ul>
         </div>
-      </div>
+        
     </div>
     
     <div class="tw-max-w-[160rem] tw-mx-auto tw-px-4 md:tw-px-6 lg:tw-px-8 tw-mt-6">
-      <div 
-        id="scrollbar-track-{{ section.id }}" 
-        class="scrollbar-track"
-      >
+      <div id="scrollbar-track-{{ section.id }}" class="scrollbar-track" role="slider" aria-label="Scroll through products" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-orientation="horizontal" tabindex="0">
         <div 
-          id="scrollbar-thumb-{{ section.id }}" 
-          class="scrollbar-thumb"
-        ></div>
+          id="scrollbar-thumb-{{ section.id }}" class="scrollbar-thumb" aria-hidden="true"></div>
       </div>
+      <div class="tw-sr-only" aria-live="polite" id="scroll-status-{{ section.id }}"></div>
     </div>
   </div>
 
   <div class="md:tw-hidden tw-max-w-[160rem] tw-mx-auto tw-px-4">
-    <div class="tw-grid tw-grid-cols-2 tw-gap-4">
+    <ul class="tw-grid tw-grid-cols-2 tw-gap-4">
       {% for block in section.blocks limit: 4 %}
-        {% render 'best-seller-card', block: block, index: forloop.index %}
+        <li>
+            {% render 'best-seller-card', block: block, index: forloop.index %}
+        </li>
       {% endfor %}
-    </div>
+    </ul>
 
     {% if section.blocks.size > 4 %}
       <div 
         id="mobile-hidden-products-{{ section.id }}" 
         class="tw-grid tw-grid-cols-2 tw-gap-4 tw-overflow-hidden tw-transition-all tw-duration-500 tw-ease-in-out"
-        style="max-height: 0; opacity: 0; margin-top: 0;"
+        style="max-height: 0; opacity: 0; margin-top: 0;"  aria-hidden="true"
+  role="list"
       >
         {% for block in section.blocks offset: 4 %}
           <div class="tw-pt-4">
@@ -76,8 +75,12 @@
         <button 
           id="show-more-btn-{{ section.id }}"
           class="tw-bg-gray-900 tw-text-white tw-px-8 tw-py-3 tw-rounded-full tw-text-sm tw-font-medium hover:tw-bg-gray-800 tw-transition-colors tw-w-full tw-max-w-xs"
+            aria-expanded="false"
+  aria-controls="mobile-hidden-products-{{ section.id }}"
+  type="button"
         >
-          {{ section.settings.show_more_text }}
+          <span class="button-text">{{ section.settings.show_more_text }}</span>
+          <span class="tw-sr-only">, {{ section.blocks.size | minus: 4 }} more products</span>
         </button>
       </div>
     {% endif %}
@@ -112,6 +115,8 @@
     padding-left: max(var(--container-padding), calc((100vw - var(--container-max-width)) / 2 + var(--container-padding)));
     padding-right: var(--container-padding);
     padding-bottom: 0.5rem;
+    list-style: none;
+    margin: 0;
   }
   
   .desktop-slider-card {
@@ -158,8 +163,21 @@
     cursor: grabbing;
   }
   
-  .scrollbar-track:hover .scrollbar-thumb {
+  .scrollbar-track:hover .scrollbar-thumb,
+  .scrollbar-track:focus .scrollbar-thumb {
     height: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .desktop-slider,
+    #mobile-hidden-products-{{ section.id }},
+    .scrollbar-thumb {
+        transition: none;
+    }
+    
+    .desktop-slider {
+        scroll-behavior: auto;
+    }
   }
 </style>
 
